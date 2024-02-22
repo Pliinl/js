@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rectangle Object Example</title>
+  </head>
+  <body>
+    <canvas
+      id="myCanvas"
+      width="400"
+      height="200"
+      style="border: 1px solid #000"
+    ></canvas>
+    <p>Diện tích: <span id="area"></span></p>
+    <p>Chu vi: <span id="perimeter"></span></p>
+
+    <script>
+      // Khai báo lớp Rectangle
+      class Rectangle {
+        constructor(width, height) {
+          this.width = width;
+          this.height = height;
+        }
+
+        // Tính diện tích
+        getArea() {
+          return this.width * this.height;
+        }
+
+        // Tính chu vi
+        getPerimeter() {
+          return 2 * (this.width + this.height);
+        }
+
+        // Vẽ hình chữ nhật lên canvas
+        drawRectangle() {
+          const canvas = document.getElementById("myCanvas");
+          const ctx = canvas.getContext("2d");
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.fillStyle = "blue";
+          ctx.fillRect(50, 50, this.width, this.height);
+        }
+      }
+
+      // Khởi tạo đối tượng Rectangle và hiển thị hình chữ nhật
+      const myRectangle = new Rectangle(100, 50);
+      myRectangle.drawRectangle();
+
+      // In diện tích và chu vi ra HTML
+      document.getElementById("area").innerText = myRectangle.getArea();
+      document.getElementById("perimeter").innerText =
+        myRectangle.getPerimeter();
+
+      // Thay đổi chiều dài và chiều rộng của hình chữ nhật
+      myRectangle.width = 150;
+      myRectangle.height = 75;
+      myRectangle.drawRectangle();
+
+      // In diện tích và chu vi mới ra HTML
+      document.getElementById("area").innerText = myRectangle.getArea();
+      document.getElementById("perimeter").innerText =
+        myRectangle.getPerimeter();
+    </script>
+  </body>
+</html>

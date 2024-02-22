@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngày Tháng Năm</title>
+</head>
+<body>
+    <h2>Ngày Tháng Năm</h2>
+
+    <script>
+        // Nhập giá trị năm, tháng, ngày từ người dùng
+const year = parseInt(prompt("Nhập năm:"));
+const month = parseInt(prompt("Nhập tháng (1-12):"));
+const day = parseInt(prompt("Nhập ngày (1-31):"));
+
+// Tạo đối tượng Date mới sử dụng các giá trị được nhập
+const inputDate = new Date(year, month - 1, day);
+
+// Lấy ngày, tháng, và năm từ đối tượng inputDate
+const formattedDay = String(inputDate.getDate()).padStart(2, '0');
+const formattedMonth = String(inputDate.getMonth() + 1).padStart(2, '0');
+const formattedYear = inputDate.getFullYear();
+
+// Hiển thị ngày theo định dạng dd-mm-yyyy
+const formattedDate = `${formattedDay}-${formattedMonth}-${formattedYear}`;
+alert(`Ngày được định dạng: ${formattedDate}`);
+
+    </script>
+</html>
