@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 5</title>
+</head>
+<body>
+    <h2>Bài 5</h2>
+    <p>
+      Viết chương trình nhập vào 1 số nguyên n và kiểm tra n có phải là số
+      nguyên tố hay không. <br />
+
+      Note: số nguyên tố là số chỉ chia hết cho 1 và chính nó. <br />
+    </p>
+
+    <h1>Kiểm tra số nguyên tố</h1>
+	<p>Nhập vào số nguyên n:</p>
+	<input id="input" type="number"><br><br>
+	<button onclick="kiemTraSoNguyenTo()">Kiểm tra</button><br><br>
+	<p id="result"></p>
+    <script>
+        function kiemTraSoNguyenTo() {
+			var n = parseInt(document.getElementById("input").value);
+			var i = 2;
+
+			if (n < 2) {
+				document.getElementById("result").innerHTML = n + " không phải là số nguyên tố";
+				return;
+			}
+
+			while (i <= Math.sqrt(n)) {
+				if (n % i === 0) {
+					document.getElementById("result").innerHTML = n + " không phải là số nguyên tố";
+					return;
+				}
+				i++;
+			}
+
+			document.getElementById("result").innerHTML = n + " là số nguyên tố";
+		}
+    </script>
+</body>
+</html>

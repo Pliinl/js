@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice Javascript Array</title>
+  </head>
+  <body>
+    <script>
+      // Bài 1: Hãy viết một chương trình để đảo ngược các phần tử trong list(array)
+      let aList = [100, 200, 300, 400, 500];
+      aList.reverse();
+
+      console.log([aList]); // Output: [500, 400, 300, 200, 100]
+
+      //  Bài 2: Hãy tạo ra một mảng  mới bằng cách cộng các phần tử tương ứng của mảng  cũ theo index tương ứng
+      let array12 = ["M", "na", "i", "Ke"];
+      let array22 = ["y", "me", "s", "lly"];
+
+      let array32 = [];
+      for (let i = 0; i < array12.length; i++) {
+        array32.push(array12[i] + array22[i]);
+      }
+      console.log(array32); // Output: ['My', 'name', 'is', 'Kelly']
+
+      // Bài 3 Cho sẵn một mảng  chứa các số tự nhiên
+      // Bình phương các phần tử trong mảng và lưu vào một mảng  mới
+
+      let array13 = [1, 2, 3, 4, 5, 6, 7];
+      let array23 = [];
+      for (let i = 0; i < array13.length; i++) {
+        array23.push(array13[i] * array13[i]);  //Cách 1:
+        //cách 2:array23.push(Math.pow(array13[i], 2));
+      }
+      console.log(array23); // Output: [1, 4, 9, 16, 25, 36, 49]
+
+      // Bài 4: Cho 2 array có cùng số phần tử với nhau.
+      let array14 = [10, 20, 30, 40];
+      let array24 = [100, 200, 300, 400];
+
+      // Hãy in các thành phần trong 2 array theo format dưới đây (sử dụng document.write)
+      /**
+       * 10 400
+       * 20 300
+       * 30 200
+       * 40 100
+       */
+      // Cách 1:
+      let array34 = [];
+      for (let i = 0; i < array14.length; i++) {
+        document.write(
+          `Bài 4: ${
+            array14[i] + " " + array24[array24.length - i - 1] + "<br>"
+          }`
+        );
+      }
+      // Cách 2: 
+      //         array24.reverse();
+      //          for (let i in array14) {
+      //          document.write(`${array14[i]} ${array[i]}<br>` )
+      // }
+
+      // Bài 5: Đếm xem trong array có tổng cộng bao nhiêu số 20
+      let array15 = [5, 10, 15, 20, 25, 50, 20];
+      let total = 0;
+      for (let i = 0; i < array15.length; i++) {
+        if (array15[i] === 20) {
+          total++; // Cách 2: total +=1
+        }
+      }
+      console.log(total); // Output: 2
+
+      // Bài 6: Hãy tìm và thay thế tất cả số 20 trong array thành 200
+      let array16 = [5, 10, 15, 20, 25, 50, 20];
+      array16[3] = "200";
+      array16[6] = "200";
+      // Cách 2: 
+      //  for (let i = 0;i<array16.length;i++) {
+                  // if (array16[i] == 20) {
+                  // array16[i] ==200;
+      //             }
+      //          }
+      document.write(`Bài 6: ${array16}`); // Output: [5, 10, 15, 200, 25, 50, 200]
+
+      // Bài 7: Hãy tạo ra một array mới bằng cách gộp hai array ban đầu.
+      let array17 = ["Hello ", "take "];
+      let array27 = ["Dear", "Sir"];
+      let array37 = [];
+      for (let i in array17) {
+        for (let j in array27) {
+            array37.push(aray17[i] +array27[j])
+        }
+      }
+      // Cách 2:
+      // for (let i = 0; i < array17.length; i++) {
+      //   for (let j = 0; j < array27.length; j++) {
+      //     array37.push(array17[i] + array27[j]);
+      //   }
+      // }
+
+      console.log(array37); // Output: ["Hello Dear", "Hello Sir", "take Dear", "take Sir"]
+    </script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Project Case Study</title>
+    <link rel="stylesheet"  href="./mini.css" />
+  </head>
+  <body>
+    <h2>Mini Project Case Study</h2>
+
+    <form action="">
+      <label for="">ID</label>
+      <input type="text" id="vehicle-id" /><br />
+      <br />
+      <label for="">ID:</label>
+      <input type="text" name="id" id="" /><br />
+      <br />
+      <label for="">Owner Name:</label>
+      <input type="text" id="owner-name" /><br />
+      <br />
+      <label for="">Vehicle Type:</label>
+      <input type="text" id="vehicle-type" /><br />
+      <br />
+      <label for="">Cylinder Capacity:</label>
+      <input type="number" id="cylinder-capacity" /><br />
+      <br />
+      <label for="">Cost:</label>
+      <input type="number" id="cost" /><br />
+      <br />
+      <button type="button" id="btn-add" onclick="addVehicle()">
+        Add new vehicle
+      </button>
+      <button type="button" id="btn-updata" onclick="updataVehicle()">
+        Updata Vehicle
+      </button>
+      <button type="button" id="btn-delete" onclick="deleteVehicle()">Delete</button>
+    </form>
+    <br />
+    <br />
+    <form action="">
+      <label for="">Input ID to Search: </label>
+      <input type="text" id="search-value" />
+      <button type="button" id="btn-search" onclick="searchVehicle()">
+        Search
+      </button>
+    </form>
+
+    <br />
+    <br />
+    <table id="vehicle-table">
+      <tr>
+        <th>No.</th>
+        <th>Owner Name</th>
+        <th>Vehicle Type</th>
+        <th>Cylinder Capacity</th>
+        <th>Cost</th>
+        <th>Tax Value</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Nguyen Van A</td>
+        <td>Wave</td>
+        <td>125</td>
+        <td>95000000</td>
+        <td>2375000</td>
+      </tr>
+    </table>
+    <script src="./script.js"></script>
+  </body>
+</html>

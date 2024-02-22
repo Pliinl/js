@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 4</title>
+</head>
+<body>
+  <h2>Bài 4</h2>
+    <p>
+      Viết chương trình nhập vào 1 số n và đếm xem n có bao nhiêu chữ số, sau đó
+      tính tổng các chữ số của n và in ra số đảo ngược của n <br />
+      Ví dụ: n = 12345 <br />
+      Output: 12345 có 5 chữ số, tổng các chữ số: 15, số đảo ngược của n: 54321
+      <br />
+    </p>
+
+    <form action="">
+      <label for="">Nhập số nguyên n: </label>
+      <input type="number" />
+      <button type="button">Submit</button>
+    </form>
+
+    <!-- bài 4 -->
+
+    <script>
+      let n = prompt("Nhập một số:");
+      let count = 0;
+      let sum = 0;
+      let reverse = 0;
+      let temp = n;
+      
+      while (temp > 0) {
+        count++;
+        sum += temp % 10;
+        reverse = reverse * 10 + temp % 10;
+        temp = Math.floor(temp / 10);
+      }
+      
+      document.write(n + " có " + count + " chữ số, tổng các chữ số: " + sum + ", số đảo ngược của n: " + reverse);
+    </script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice For Loop</title>
+</head>
+
+<body>
+    <h1>Practice For Loop</h1>
+
+    <h2>Bài 1</h2>
+    <p>Viết chương trình nhập vào 1 số nguyên n. Tính tổng các số chẵn từ 0 đến n.</p>
+    <form action="">
+        <label for="">Nhập số nguyên n: </label>
+        <input type="number">
+        <button type="button">Submit</button>
+    </form>
+    <script>
+        function sumEvenNumbers() {
+            let n = parseInt(document.querySelector("input[type=number]").value);
+            let sum = 0;
+    
+            for (let i = 0; i <= n; i += 2) {
+                sum += i;
+            }
+    
+            alert(`Tổng các số chẵn từ 0 đến ${n} là ${sum}`);
+        }
+        
+        document.querySelector("button").addEventListener("click", sumEvenNumbers);
+    </script>
+
+    <!-- ---------------------------------------------------------------------------------------------------- -->
+
+    <h2>Bài 2</h2>
+    <p>Viết chương trình nhập vào một số nguyên dương n. Tính giai thừa của n. <br>
+        Note: Giai thừa của n được tính bằng công thức: <br>
+        n! = n*(n - 1)*(n - 2)*....1 <br>
+        Ví dụ: 5! = 5 * 4 * 3 * 2 * 1 = 120</p>
+
+    <form action="">
+        <label for="">Nhập số nguyên n: </label>
+        <input type="number">
+        <button type="button">Submit</button>
+    </form>
+    <script>
+        function tinhGiaiThua() {
+            var n = parseInt(document.querySelector("input[type=number]").value);
+            var giaithua = 1;
+            for (var i = 1; i <= n; i++) {
+                giaithua *= i;
+            }
+            alert("Giai thừa của " + n + " là: " + giaithua);
+        }
+    
+        document.querySelector("button").addEventListener("click", tinhGiaiThua);
+    </script>
+
+    <!-- ---------------------------------------------------------------------------------------------------- -->
+
+    <h2>Bài 3</h2>
+    <p>Viết chương trình nhập vào số hạng đầu tiên và công sai của cấp số cộng. <br>
+        In ra 10 số đầu tiên của cấp số cộng đó. <br>
+        Ví dụ: số hạng đầu tiên = 3, công sai = 5 <br>
+        Output: 3 8 13 18 23 28 33 38 43 48.</p>
+
+    <form action="">
+        <label for="">Nhập số hạng đầu tiên: </label>
+        <input type="number"> <br>
+        
+        <label for="">Nhập công sai của cấp số cộng: </label>
+        <input type="number">
+        <button type="button">Submit</button>
+    </form>
+    <script>
+        function generateArithmeticSequence() {
+            const firstTerm = Number(document.querySelector('input[name="firstTerm"]').value);
+            const commonDifference = Number(document.querySelector('input[name="commonDifference"]').value);
+        
+            let output = "";
+            for (let i = 0; i < 10; i++) {
+                let term = firstTerm + i * commonDifference;
+                output += term + " ";
+            }
+        
+            document.querySelector('#result').innerHTML = output;
+        }
+        
+        document.querySelector('button').addEventListener('click', generateArithmeticSequence);
+    </script>
+
+    <!-- ---------------------------------------------------------------------------------------------------- -->
+
+    <h2>Bài 4</h2>
+    <p>Viết chương trình nhập vào một số n. In ra bảng cửu chương của n. <br>
+        Ví dụ: n = 2 thì in ra: <br>
+        2 x 1 = 2 <br>
+        2 x 2 = 4 <br>
+        2 x 3 = 6 <br>
+        2 x 4 = 8 <br>
+        2 x 5 = 10 <br>
+        2 x 6 = 12 <br>
+        2 x 7 = 14 <br>
+        2 x 8 = 16 <br>
+        2 x 9 = 18 <br>
+        2 x 10 = 20</p>
+
+    <form action="">
+        <label for="">Nhập số nguyên n: </label>
+        <input type="number">
+        <button type="button">Submit</button>
+    </form>
+    <script>
+        const button = document.querySelector("button");
+        button.addEventListener("click", function() {
+            const n = parseInt(document.querySelector("input").value);
+            for(let i = 1; i <= 10; i++) {
+                console.log(n + " x " + i + " = " + (n*i));
+            }
+        });
+    </script>
+    
+
+    <!-- ---------------------------------------------------------------------------------------------------- -->
+
+    <h2>Bài 5</h2>
+    <p>Viết chương trình nhập vào 1 số nguyên n
+        và kiểm tra n có phải là số hoàn hảo hay không <br>
+
+        Note: số hoàn hảo là số có tổng các ước số của nó bằng chính nó. <br>
+        Ví dụ: 6 là số hoàn hảo vì tổng các ước của nó là: 1 + 2 + 3 = 6</p>
+
+    <form action="">
+        <label for="">Nhập số nguyên n: </label>
+        <input type="number">
+        <button type="button">Submit</button>
+    </form>
+    
+    <script>
+        function kiemTraSoHoanHao() {
+            var n = parseInt(document.getElementById("soNguyen").value);
+            var tong = 0;
+            for (var i = 1; i < n; i++) {
+                if (n % i == 0) {
+                    tong += i;
+                }
+            }
+            if (tong == n) {
+                alert(n + " là số hoàn hảo");
+            } else {
+                alert(n + " không phải là số hoàn hảo");
+            }
+        }
+    </script>
+    
+    <form action="">
+        <label for="soNguyen">Nhập số nguyên n: </label>
+        <input type="number" id="soNguyen">
+        <button type="button" onclick="kiemTraSoHoanHao()">Submit</button>
+    </form>
+
+</body>
+
+</html>
